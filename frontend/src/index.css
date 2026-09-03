@@ -1,0 +1,212 @@
+:root {
+  --primary-color: #4f46e5;
+  --secondary-color: #818cf8;
+  --accent-color: #f43f5e;
+  --bg-dark: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --sidebar-bg: #ffffff;
+  --navbar-bg: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+}
+
+.app {
+  background-color: var(--bg-dark);
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border: none;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.navbar {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar {
+  width: 260px;
+  background: rgba(15, 23, 42, 0.9);
+  border-right: 1px solid var(--glass-border);
+  height: calc(100vh - 70px);
+  position: fixed;
+  padding: 2rem 1rem;
+}
+
+.main-content {
+  margin-left: 260px;
+  padding: 2rem;
+  background-color: var(--bg-dark);
+  min-height: calc(100vh - 70px);
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+/* Ant Design Overrides */
+.ant-table {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+.ant-table-thead > tr > th {
+  background: rgba(0, 0, 0, 0.02) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--glass-border) !important;
+  color: var(--text-secondary) !important;
+}
+
+.ant-table-row:hover > td {
+  background: rgba(0, 0, 0, 0.02) !important;
+}
+
+.ant-tabs-nav {
+  border-bottom: 1px solid var(--glass-border) !important;
+}
+
+.ant-tabs-tab {
+  color: var(--text-secondary) !important;
+}
+
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary-color) !important;
+}
+
+.ant-card-head {
+  border-bottom: 1px solid var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.ant-statistic-title {
+  color: var(--text-secondary) !important;
+}
+
+.ant-statistic-content {
+  color: var(--text-primary) !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ant-statistic-content-prefix, .ant-statistic-content-suffix {
+  color: var(--primary-color) !important;
+}
+
+.ant-statistic-content-value {
+  color: var(--text-primary) !important;
+  font-weight: 700;
+}
+
+.ant-input, .ant-select-selector {
+  background: #ffffff !important;
+  border: 1px solid var(--glass-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.ant-input::placeholder {
+  color: var(--text-secondary) !important;
+  opacity: 0.6;
+}
+
+.ant-tag {
+  background: rgba(79, 70, 229, 0.1) !important;
+  border: 1px solid rgba(79, 70, 229, 0.3) !important;
+  color: var(--secondary-color) !important;
+}
+
+.ant-btn-link {
+  color: var(--secondary-color) !important;
+}
+
+.ant-btn-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Global text utility */
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.map-container {
+  height: 500px;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
