@@ -7,9 +7,9 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
- 
+  # -------------------------------------------------------------
   # 1. Build and Test Java Backend
-
+  # -------------------------------------------------------------
   backend-ci:
     name: Build Backend (Spring Boot)
     runs-on: ubuntu-latest
@@ -30,9 +30,9 @@ jobs:
           cd backend
           mvn clean package -DskipTests
 
-  
+  # -------------------------------------------------------------
   # 2. Build React Frontend
-
+  # -------------------------------------------------------------
   frontend-ci:
     name: Build Frontend (React)
     runs-on: ubuntu-latest
@@ -54,9 +54,9 @@ jobs:
           npm install
           npm run build
 
- 
+  # -------------------------------------------------------------
   # 3. Docker Compose Build Check
-
+  # -------------------------------------------------------------
   docker-ci:
     name: Test Docker Compose Build
     needs: [backend-ci, frontend-ci]
